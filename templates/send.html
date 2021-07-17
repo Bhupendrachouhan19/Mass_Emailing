@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>EMAIL SENDING PAGE</title>
+  </head>
+  <style>
+
+    .bg {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        background-image: url(https://wallpapercave.com/wp/wp2757894.gif);
+        background-size: 100% 100%;
+        background-position: top center
+    }
+    
+    .content {
+        margin-top: 20%
+    }
+    
+
+    .InputStyle {
+        border-radius: 25px;
+        border: solid 1px rgb(255, 255, 255);
+        background: transparent;
+        width: 300px;
+        padding: 10px 20px;
+        color: white;
+    }
+
+    .InputStyle::placeholder{
+        color: white;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 12px;
+        color: white
+    }
+    
+    i {
+        padding: 5px;
+        color: white
+    }
+    
+    input,
+    input:focus {
+        border: solid 1px white;
+        outline: 0;
+        -webkit-appearance: none;
+        box-shadow: nones;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none
+    }
+    
+    .firstLine {
+        margin-top: 180px;
+        font-size: 30px;
+        color: rgb(187, 255, 0);
+        font-weight: bold;
+        font-style: italic;        
+    }
+
+    .secondLine {
+        font-weight: 350;
+        font-size: 15px;
+        margin-bottom: 15%;
+        color: rgb(255, 0, 0)
+    }
+
+    .left {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: top;
+    }
+
+    .btn-success {
+        font-weight: bolder;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .firstLine {
+            font-size: 20px
+        }
+
+        .secondLine{
+            font-size: 10px;
+        }
+     
+        .InputStyle {
+        width: 200px;
+        }
+    
+        .btn-success {
+        width: 70px;
+        font-size: 10px;
+    }
+
+    .InputStyle::placeholder{
+        color: white;
+        font-size: 10px;
+    }
+    }
+
+    </style>
+    
+  <body>
+    <div class="bg text-center">
+        <form action="/send" method="post">
+            {% csrf_token %}
+
+            <div class="left">
+                <p class="firstLine">EMAILING PANNEL</p>
+                <p class="secondLine"></p>
+                <p> <input name="subject" class="InputStyle" placeholder="Enter your subject" style="font-family:Arial, FontAwesome" type="text"> </p>
+                <p> <textarea name="message" class="InputStyle" placeholder="Enter your message" style="font-family:Arial, FontAwesome"></textarea> </p>
+                <button class=" btn btn-success">Send</button>
+            </div>
+        </form>
+    </div>
+  </body>
+</html>
+
